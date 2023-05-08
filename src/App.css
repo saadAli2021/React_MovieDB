@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;900&family=Mukta:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Heebo";
+  font-weight: 400;
+}
+body {
+  background-color: rgb(247, 247, 247);
+}
+.mainSection {
+  max-width: 768px;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 580px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.card {
+  background-color: aliceblue;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  gap: 1rem;
+}
+.movieinfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  isolation: isolate;
+  gap: 1rem;
+}
+.movieinfo h1,
+h3 {
+  font-weight: 700;
+}
+
+.plot {
+  max-width: 550px;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+}
+
+/* *************************** */
+a {
+  all: unset;
+}
+.btn {
+  color: purple;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid purple;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.btn:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: purple;
+  z-index: -1;
+  transition: all 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover::before {
+  width: 160%;
+}
+
+/* ---------- */
+.MovieList {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.movieItem {
+  height: 265px;
+  width: 160px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  /* background-color: rgb(243, 251, 252); */
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.movieItem .title {
+  font-size: 14px;
+  max-width: 140px;
+  font-weight: 700;
+  color: rgb(48, 48, 48);
+  letter-spacing: 0.02rem;
+}
+.movieItem .year {
+  font-size: 12px;
+}
+.thumbnail {
+  /* width: 140px; */
+  height: 180px;
+  object-fit: contain;
+}
+/* ********************** */
+.input {
+  border-radius: 10px;
+  outline: 2px solid #febf00;
+  border: 0;
+  width: 25rem;
+  background-color: #ffffff;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.1s;
+}
+
+.input:focus {
+  outline-offset: 5px;
+  background-color: #f8ffff;
+}
+.errormsg {
+  padding: 0.5rem;
+  color: rgb(226, 48, 48);
+  font-weight: 500;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
